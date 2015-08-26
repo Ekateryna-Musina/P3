@@ -1,0 +1,60 @@
+body,
+div,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+    font-family: 'Poppins', sans-serif;    
+}
+
+ul{
+    list-style-type: none;
+}
+
+div, section, header, footer{
+    border: 1px solid white;
+}
+
+.flex-box{
+  display:flex;
+  flex-flow: row wrap;
+}
+
+.header-contacts{
+
+}
+
+.flex-align-center{
+  justify-content: center;
+  align-items:center;
+}
+
+.icon{
+    width: 30px;
+    height: 30px;
+}
+
+.header {
+    height: 400px;
+    background-color: #464444;    
+    color:white;
+}
+
+.content{
+    height: 100%;
+    flex:1;
+    background-color: green;
+}
+
+.footer{
+    height: 50px;
+    background-color: gray;
+
+}
+
