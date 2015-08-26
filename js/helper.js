@@ -56,7 +56,7 @@ var HTMLonlineSchool = ' - <span> %data%</span></div>';
 var HTMLonlineDates = '<div class="entry-details"><span class="date-text">%data%</span>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
-var HTMLBubbleChart = '<div class="bubbleChart"></div>';
+var HTMLskill = '<div class="skill"></div>';
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 

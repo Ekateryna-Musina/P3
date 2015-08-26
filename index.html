@@ -2,12 +2,15 @@
 <head>
   <meta charset="utf-8">
   <title>Resume</title>
+  <link href="css/lib/style.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width">
   <script src="js/jQuery.js"></script>
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="js/helper.js"></script>
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+  <script type="text/javascript" src="js/d3.min.js"></script>
+  <script type="text/javascript" src="js/radialProgress.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Poppins:400,500,300' rel='stylesheet' type='text/css'>
   
 </head>
@@ -35,94 +38,105 @@
     </ul>
   </div>
   <section id="main" class="flex-box">
-    <div id="welcome" class="row">      
+    <div id="welcome" class="row">
       <div class="row-header">
         <h2>Welcome</h2>
-      </div>    
+      </div>
     </div>
-    <div id="contacts" class="row">
+
+    <div id="skills" class="row">
       <div class="row-header">
-        <h2>Contacts</h2>
-      </div>    
-      <div class="row-entry"><div class="flex-box-begin">
-
-        <div id="photo" class="contact-item">
+        <h2>Skills</h2>
+         <h3 class="skills-title">day-to-day comfort</h3>
+        <div id="coreSkills" class="row-entry skills-set">
+         
         </div>
-
-        <div id="contacts" class="contact-item">        
-        <ul id="contactList" >
-        </ul>
+         <h3 class="skills-title">experience with</h3>
+        <div id="expSkills" class="row-entry skills-set">
+          
         </div>
-      </div></div>
-      
-    </div>
-    <div id="skills" class="row">      
-        <div class="row-header">
-          <h2>Skills</h2>
-        </div>  
-    </div>
-    <div  id="workExperience" class="row">     
+        <h3 class="skills-title">methodologies</h3>
+        <div id="methSkills" class="row-entry skills-set">
+          
+        </div>
+      </div>
+      <div  id="workExperience" class="row">
         <div class="row-header">
           <h2>Work Experience</h2>
         </div>
-   
-    </div>
-    <div id="projects" class="row">    
+        
+      </div>
+      <div id="projects" class="row">
         <div class="row-header">
           <h2>Projects</h2>
         </div>
-        <div id="projects-list" class="row-entry projects-list"></div>    
-    </div>
-    <div id="education" class="row">      
+        <div id="projects-list" class="row-entry projects-list"></div>
+      </div>
+      <div id="education" class="row">
         <div class="row-header">
           <h2>Education</h2>
-        </div>      
+        </div>
+      </div>
+
+          <div id="contacts" class="row">
+      <div class="row-header">
+        <h2>Contacts</h2>
+      </div>
+      <div class="row-entry"><div class="flex-box-begin">
+        <div id="photo" class="contact-item">
+        </div>
+        <div id="contacts" class="contact-item">
+          <ul id="contactList" >
+          </ul>
+        </div>
+      </div>
+      </div>
+      
     </div>
-    <div  class="row map">      
+      <div  class="row map">
         <div class="row-header">
           <h2>Where I've Lived and Worked</h2>
-        </div>   
-
+        </div>
         <div id="mapDiv" class="row-entry"></div>
-    </div>
-  </section>
-  <footer id="footer" class="footer">
-    <p class="text-copyright">© 2015&nbsp;Kateryna Musina.&nbsp;All rights reserved.</p>
-    <ul class="flex-box-center">
-      <li><a class="nav-link grow" href="#about">About</a></li>
-      <li><a class="nav-link grow" href="#workExperience">Jobs</a></li>
-      <li><a class="nav-link grow" href="#skills">Skills</a></li>
-      <li><a class="nav-link grow" href="#projects">Projects</a></li>
-      <li><a class="nav-link grow" href="#education">Education</a></li>
-      <li><a class="nav-link grow" href="#contacts">Contacts</a></li>
-    </ul>
-    
-    <ul id="footerBottomContacts" class="hd-contacts flex-box-social">
-    </ul>
-  </footer>
-  <script src="js/resumeBuilder.js"></script>
-  <script type="text/javascript">
-  // if(document.getElementsByClassName('flex-item').length === 0) {
-  // document.getElementById('topContacts').style.display = 'none';
-  // }
-  // if(document.getElementsByTagName('h1').length === 0) {
-  // document.getElementById('header').style.display = 'none';
-  // }
-  // if(document.getElementsByClassName('work-entry').length === 0) {
-  // document.getElementById('workExperience').style.display = 'none';
-  // }
-  // if(document.getElementsByClassName('project-entry').length === 0) {
-  // document.getElementById('projects').style.display = 'none';
-  // }
-  // if(document.getElementsByClassName('education-entry').length === 0) {
-  // document.getElementById('education').style.display = 'none';
-  // }
-  // if(document.getElementsByClassName('flex-item').length === 0) {
-  // document.getElementById('lets-connect').style.display = 'none';
-  // }
-  // if(document.getElementById('map') === null) {
-  // document.getElementById('mapDiv').style.display = 'none';
-  // }
-  </script>
-</body>
+      </div>
+    </section>
+    <footer id="footer" class="footer">
+      <p class="text-copyright">© 2015&nbsp;Kateryna Musina.&nbsp;All rights reserved.</p>
+      <ul class="flex-box-center">
+        <li><a class="nav-link grow" href="#about">About</a></li>
+        <li><a class="nav-link grow" href="#workExperience">Jobs</a></li>
+        <li><a class="nav-link grow" href="#skills">Skills</a></li>
+        <li><a class="nav-link grow" href="#projects">Projects</a></li>
+        <li><a class="nav-link grow" href="#education">Education</a></li>
+        <li><a class="nav-link grow" href="#contacts">Contacts</a></li>
+      </ul>
+      
+      <ul id="footerBottomContacts" class="hd-contacts flex-box-social">
+      </ul>
+    </footer>
+    <script src="js/resumeBuilder.js"></script>
+    <script type="text/javascript">
+    // if(document.getElementsByClassName('flex-item').length === 0) {
+    // document.getElementById('topContacts').style.display = 'none';
+    // }
+    // if(document.getElementsByTagName('h1').length === 0) {
+    // document.getElementById('header').style.display = 'none';
+    // }
+    // if(document.getElementsByClassName('work-entry').length === 0) {
+    // document.getElementById('workExperience').style.display = 'none';
+    // }
+    // if(document.getElementsByClassName('project-entry').length === 0) {
+    // document.getElementById('projects').style.display = 'none';
+    // }
+    // if(document.getElementsByClassName('education-entry').length === 0) {
+    // document.getElementById('education').style.display = 'none';
+    // }
+    // if(document.getElementsByClassName('flex-item').length === 0) {
+    // document.getElementById('lets-connect').style.display = 'none';
+    // }
+    // if(document.getElementById('map') === null) {
+    // document.getElementById('mapDiv').style.display = 'none';
+    // }
+    </script>
+  </body>
 </html>
