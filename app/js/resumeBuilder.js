@@ -1,5 +1,4 @@
 /* Bio information */
-
 var bio = {
     name: "Kateryna Musina",
     role: "software developer",
@@ -35,58 +34,8 @@ var bio = {
     picture: "images/photo.png",
     welcomeMessage: "Hello, I am Front-End developer, review my skills. Dummy text, dummy text, dummy text, dummy text, dummy text, text.",
     skills: {
-        core: [{
-            text: "JavaScript/JQuery/AJAX",
-            count: 81
-        }, {
-            text: ".NET",
-            count: 92
-        }, {
-            text: "HTML5/CSS3",
-            count: 78
-        }, {
-            text: "GIT/SVN",
-            count: 88
-        }, {
-            text: "GRUNT",
-            count: 59
-        }, 
-         {
-            text: "NPM",
-            count: 71
-        },{
-            text: "Bootstrap/Flex",
-            count: 82
-        }],
-        exp: [{
-            text: "Angular.js",
-            count: 40
-        }, {
-            text: "Backbone.js",
-            count: 30
-        }, {
-            text: "Knockout.js",
-            count: 30
-        }, {
-            text: "Node.js",
-            count: 60
-        }, {
-            text: "Python",
-            count: 50
-        }],
-        meth: [{
-            text: "Responsive Layout and Design",
-            count: 85
-        }, {
-            text: "Agile Methodology",
-            count: 67
-        }, {
-            text: "Mobile First Thinking",
-            count: 75
-        }, {
-            text: "Cross-Browser Compatibility",
-            count: 89
-        }]
+        core: ["JavaScript", "JQuery/AJAX", ".NET", "Twitter Bootstrap", "HTML5/CSS3", "GIT/SVN", "GRUNT",  "MongoDB", "SQLServer"],
+        exp: ["Node.js", "Python", "Angular.js"]
     },
     display: function() {
         $.each(bio.contacts.social, function(i, obj) {
@@ -97,36 +46,26 @@ var bio = {
         $.each(bio.contacts.personal, function(i, obj) {
             var element = replaceDataPlaceholder(replaceUrlPlaceholder(replaceTextPlaceholder(HTMLcontact, obj.text), obj.img), obj.data);
             $("#contactList").append(element);
-
         });
-
-        $("#name").prepend(replaceDataPlaceholder(HTMLheaderName, bio.name),
-            replaceDataPlaceholder(HTMLheaderRole, bio.role));
-
+        $("#name").prepend(replaceDataPlaceholder(HTMLheaderName, bio.name), replaceDataPlaceholder(HTMLheaderRole, bio.role));
         var welcomeEntry = $(HTMLGenericStart);
         welcomeEntry.append(replaceDataPlaceholder(HTMLwelcomeMsg, bio.welcomeMessage));
         $("#welcome").append(welcomeEntry);
-
         $("#photo").append(replaceDataPlaceholder(HTMLbioPic, bio.picture));
-
         this.displaySkills();
     },
-
     displaySkills: function() {
-        this.displaySkillSet("#coreSkills", this.skills.core);
-        this.displaySkillSet("#expSkills", this.skills.exp);
-          this.displaySkillSet("#methSkills", this.skills.meth);
-    },
+        var core = $("#coreSkills");
+        for (var i = 0; i < this.skills.core.length; i++) {
+            core.append(replaceDataPlaceholder(HTMLskills, this.skills.core[i]))
+        }
 
-    displaySkillSet: function(selector, skillSet) {
-        for (var i = 0; i < skillSet.length; i++) {
-            var skill = $(HTMLskill);
-            $(selector).append(skill);
-            displaySkill(skill[0], skillSet[i].text, skillSet[i].count);
+        var exp = $("#expSkills");
+        for (var i = 0; i < this.skills.exp.length; i++) {
+            exp.append(replaceDataPlaceholder(HTMLskills, this.skills.exp[i]))
         }
     }
 }
-
 var work = {
     jobs: [{
         employer: "Sitecore",
@@ -146,18 +85,12 @@ var work = {
     display: function() {
         for (var i = 0; i < this.jobs.length; i++) {
             var job = this.jobs[i];
-
             var rowEntry = $(HTMLGenericStart);
-            rowEntry.append(
-                replaceDataPlaceholder(replaceUrlPlaceholder(HTMLworkEmployer, job.url), job.employer) + replaceDataPlaceholder(HTMLworkTitle, job.title),
-                replaceDataPlaceholder(HTMLworkDates, job.dates) +
-                replaceDataPlaceholder(HTMLworkLocation, job.location),
-                replaceDataPlaceholder(HTMLworkDescription, job.description));
+            rowEntry.append(replaceDataPlaceholder(replaceUrlPlaceholder(HTMLworkEmployer, job.url), job.employer) + replaceDataPlaceholder(HTMLworkTitle, job.title), replaceDataPlaceholder(HTMLworkDates, job.dates) + replaceDataPlaceholder(HTMLworkLocation, job.location), replaceDataPlaceholder(HTMLworkDescription, job.description));
             $("#workExperience").append(rowEntry);
         }
     }
 };
-
 var projects = {
     projects: [{
         title: "Sample 1",
@@ -186,26 +119,16 @@ var projects = {
     }],
     display: function() {
         for (var i = 0; i < this.projects.length; i++) {
-
             var project = this.projects[i];
             var projectEntry = $(HTMLProjectStart);
-
             projectEntry.append(replaceDataPlaceholder(HTMLprojectImage, project.image));
-
             var projectOverlay = $(HTMLprojectData);
-
             projectEntry.append(projectOverlay);
-
-            projectOverlay.append(replaceDataPlaceholder(HTMLprojectTitle, project.title),
-                replaceDataPlaceholder(HTMLprojectDates, project.dates),
-                replaceDataPlaceholder(HTMLprojectDescription, project.description),
-                replaceDataPlaceholder(HTMLprojectLink, project.url));
+            projectOverlay.append(replaceDataPlaceholder(HTMLprojectTitle, project.title), replaceDataPlaceholder(HTMLprojectDates, project.dates), replaceDataPlaceholder(HTMLprojectDescription, project.description), replaceDataPlaceholder(HTMLprojectLink, project.url));
             $("#projects-list").append(projectEntry);
-
         }
     }
 };
-
 var education = {
     schools: [{
         name: "National University of Dnipropetrovsk",
@@ -225,48 +148,25 @@ var education = {
     display: function() {
         var education = $("#education");
         for (var i = 0; i < this.schools.length; i++) {
-
             var educationEntry = $(HTMLGenericStart);
-
             var school = this.schools[i];
-
-            educationEntry.append(replaceDataPlaceholder(replaceUrlPlaceholder(HTMLschoolName, school.url), school.name) +
-                replaceDataPlaceholder(HTMLschoolDegree, school.degree),
-                replaceDataPlaceholder(HTMLschoolDates, school.dates) +
-                replaceDataPlaceholder(HTMLschoolLocation, school.location),
-                replaceDataPlaceholder(HTMLscoolDescription, school.description));
-
+            educationEntry.append(replaceDataPlaceholder(replaceUrlPlaceholder(HTMLschoolName, school.url), school.name) + replaceDataPlaceholder(HTMLschoolDegree, school.degree), replaceDataPlaceholder(HTMLschoolDates, school.dates) + replaceDataPlaceholder(HTMLschoolLocation, school.location), replaceDataPlaceholder(HTMLscoolDescription, school.description));
             for (var j = 0; j < school.majors.length; j++) {
                 educationEntry.append(replaceDataPlaceholder(HTMLschoolMajor, school.majors[j]));
             }
         }
-
         education.append(educationEntry);
-
-
         if (this.onlineCourses.length > 0) {
             education.append(HTMLonlineClasses);
         }
         for (var i = 0; i < this.onlineCourses.length; i++) {
-
-
-
             var courseEntry = $(HTMLGenericStart);
-
             var course = this.onlineCourses[i];
-
-            courseEntry.append(
-                replaceDataPlaceholder(replaceUrlPlaceholder(HTMLonlineTitle, course.url), course.title) +
-                replaceDataPlaceholder(HTMLonlineSchool, course.school),
-                replaceDataPlaceholder(HTMLonlineDates, course.date));
-
+            courseEntry.append(replaceDataPlaceholder(replaceUrlPlaceholder(HTMLonlineTitle, course.url), course.title) + replaceDataPlaceholder(HTMLonlineSchool, course.school), replaceDataPlaceholder(HTMLonlineDates, course.date));
             education.append(courseEntry);
         }
     }
 };
-
-
-
 
 function locationizer(work) {
     var locs = [];
@@ -294,28 +194,7 @@ function replacePlaceholder(pattern, placenolderName, data) {
     }
     return pattern;
 }
-
-function displaySkill(id, label, value) {
-    // var div=d3.select(document.getElementById(id));
-
-    // var rp = radialProgress(document.getElementById(id))
-    //     .label(label)
-    //     .diameter(150)
-    //     .value(value)
-    //     .render();
-
-    var div = d3.select(id);
-
-    var rp = radialProgress(id)
-        .label(label)
-        .diameter(150)
-        .value(value)
-        .render();
-}
-
-
 $("#mapDiv").append(googleMap);
-
 bio.display();
 projects.display();
 education.display();

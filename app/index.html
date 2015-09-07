@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Resume</title>
+  
+  <link href="css/style.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width">
+  <script src="js/jQuery.js"></script>  
+  <script src="js/helper.js"></script>
+  
+  <link href='http://fonts.googleapis.com/css?family=Poppins:400,500,300' rel='stylesheet' type='text/css'>
+
+   <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+  <link rel="import" href="../bower_components/google-apis/google-maps-api.html">
+  <link rel="import" href="../bower_components/google-map/google-map-marker.html">
+</head>
+<body>
+  <header id="header" class="header">
+    <ul id="hdTopContacts" class="flex-box-social">
+    </ul>
+    <div class="flex-box-center vr-center">
+      <div id="name" class="name-item">
+      </div>
+    </div>
+    <a href="resources/Kateryna Musina Resume.pdf" class="button-link" target="_blank">download resume</a>
+  </header>
+  <div id="navigation" class="navigation">
+    <ul class="flex-box-center">
+      <li><a class="nav-link grow" href="#about">About</a></li>
+      <li><a class="nav-link grow" href="#workExperience">Jobs</a></li>
+      <li><a class="nav-link grow" href="#skills">Skills</a></li>
+      <li><a class="nav-link grow" href="#projects">Projects</a></li>
+      <li><a class="nav-link grow" href="#education">Education</a></li>
+      <li><a class="nav-link grow" href="#about">Contacts</a></li>
+    </ul>
+  </div>
+  <section id="main" class="flex-box">
+    <div id="welcome" class="row">
+      <div class="row-header">
+        <h2>Welcome</h2>
+      </div>
+    </div>
+    <div id="skills" class="row">
+      <div class="row-header">
+        <h2>Skills</h2>
+      </div>
+      <div class ="row-entry flex-box">
+
+        <div class="column">
+          <h3 class="skills-title">day-to-day comfort</h3>
+          <ul id="coreSkills">
+          </ul>
+        </div>
+
+        <div class="column">
+          <h3 class="skills-title">experience with</h3>
+          <ul id="expSkills">
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+    <div  id="workExperience" class="row">
+      <div class="row-header">
+        <h2>Work Experience</h2>
+      </div>
+    </div>
+    <div id="projects" class="row">
+      <div class="row-header">
+        <h2>Projects</h2>
+      </div>
+      <div id="projects-list" class="row-entry projects-list"></div>
+    </div>
+    <div id="education" class="row">
+      <div class="row-header">
+        <h2>Education</h2>
+      </div>
+    </div>
+    <div id="contacts" class="row">
+      <div class="row-header">
+        <h2>Contacts</h2>
+      </div>
+      <div class="row-entry"><div class="flex-box-begin">
+        <div id="photo" class="contact-item">
+        </div>
+        <div id="contacts" class="contact-item">
+          <ul id="contactList" >
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div  class="row">
+    <div class="row-header">
+      <h2>Where I've Lived and Worked</h2>
+    </div>
+   
+    <google-map latitude="37.77493" longitude="-122.41942" fit-to-markers>
+  <google-map-marker latitude="37.779" longitude="-122.3892"
+      draggable="true" title="Go Giants!"></google-map-marker>
+  <google-map-marker latitude="37.777" longitude="-122.38911"></google-map-marker>
+</google-map>
+  </div>
+</section>
+<footer id="footer" class="footer">
+  <p class="text-copyright">© 2015&nbsp;Kateryna Musina.&nbsp;All rights reserved.</p>
+  <ul class="flex-box-center">
+    <li><a class="nav-link grow" href="#about">About</a></li>
+    <li><a class="nav-link grow" href="#workExperience">Jobs</a></li>
+    <li><a class="nav-link grow" href="#skills">Skills</a></li>
+    <li><a class="nav-link grow" href="#projects">Projects</a></li>
+    <li><a class="nav-link grow" href="#education">Education</a></li>
+    <li><a class="nav-link grow" href="#contacts">Contacts</a></li>
+  </ul>
+  <ul id="footerBottomContacts" class="hd-contacts flex-box-social">
+  </ul>
+</footer>
+<script src="js/resumeBuilder.js"></script>
+<script type="text/javascript">
+// if(document.getElementsByClassName('flex-item').length === 0) {
+// document.getElementById('topContacts').style.display = 'none';
+// }
+// if(document.getElementsByTagName('h1').length === 0) {
+// document.getElementById('header').style.display = 'none';
+// }
+// if(document.getElementsByClassName('work-entry').length === 0) {
+// document.getElementById('workExperience').style.display = 'none';
+// }
+// if(document.getElementsByClassName('project-entry').length === 0) {
+// document.getElementById('projects').style.display = 'none';
+// }
+// if(document.getElementsByClassName('education-entry').length === 0) {
+// document.getElementById('education').style.display = 'none';
+// }
+// if(document.getElementsByClassName('flex-item').length === 0) {
+// document.getElementById('lets-connect').style.display = 'none';
+// }
+// if(document.getElementById('map') === null) {
+// document.getElementById('mapDiv').style.display = 'none';
+// }
+</script>
+</body>
+</html>

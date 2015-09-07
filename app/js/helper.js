@@ -24,7 +24,7 @@ var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLwelcomeMsg = '<p class="welcome-message">%data%</p>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box">%data%</ul>';
-var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+var HTMLskills  = '<li class="flex-item"><p>%data%</p</li>';
 
 var HTMLGenericStart = '<div class="row-entry"></div>';
 
@@ -206,7 +206,7 @@ Uncomment the code below when you're ready to implement a Google Map!
 */
 
 // Calls the initializeMap() function when the page loads
-window.addEventListener('load', initializeMap);
+//window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
