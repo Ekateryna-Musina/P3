@@ -5,16 +5,16 @@ var bio = {
     contacts: {
         social: [{
             data: "https://twitter.com/katya_ms",
-            img: "images/icons/twitter.svg",
+            img: "img/icons/twitter.svg",
         }, {
             data: "https://github.com/Ekateryna-Musina",
-            img: "images/icons/github.svg",
+            img: "img/icons/github.svg",
         }, {
             data: "skype://kate.kotsar",
-            img: "images/icons/skype.svg",
+            img: "img/icons/skype.svg",
         }, {
             data: "https://dk.linkedin.com/pub/ekaterina-musina/19/bb2/295",
-            img: "images/icons/linkedin.svg",
+            img: "img/icons/linkedin.svg",
         }],
         personal: [{
             data: "tel:+4593921429",
@@ -31,7 +31,7 @@ var bio = {
         }]
     },
     location: "Denmark",
-    picture: "images/photo.png",
+    picture: "img/photo.png",
     welcomeMessage: "Hello, I am Front-End developer, review my skills. Dummy text, dummy text, dummy text, dummy text, dummy text, text.",
     skills: {
         core: ["JavaScript", "JQuery/AJAX", ".NET", "Twitter Bootstrap", "HTML5/CSS3", "GIT/SVN", "GRUNT",  "MongoDB", "SQLServer"],
@@ -97,25 +97,25 @@ var projects = {
         dates: "January 2013 - June 2013",
         description: "1Projects Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  est laborum.",
         url: "#",
-        image: "images/code.jpg"
+        image: "img/code.jpg"
     }, {
         title: "Sample 2",
         dates: "January 2012 - June 2012",
         description: "2Projects Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  est laborum.",
         url: "#",
-        image: "images/cd.jpg"
+        image: "img/cd.jpg"
     }, {
         title: "Sample 3",
         dates: "January 2012 - June 2012",
         description: "3Projects Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  est laborum.",
         url: "#",
-        image: "images/wb.jpg"
+        image: "img/wb.jpg"
     }, {
         title: "Sample 4",
         dates: "January 2012 - June 2012",
         description: "4Projects Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  est laborum.",
         url: "#",
-        image: "images/plane.jpg"
+        image: "img/plane.jpg"
     }],
     display: function() {
         for (var i = 0; i < this.projects.length; i++) {
