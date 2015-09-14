@@ -34,24 +34,24 @@ var bio = {
   picture: "img/photo.png",
   welcomeMessage: "Hello, I am Front-End developer, review my skills. Dummy text, dummy text, dummy text, dummy text, dummy text, text.",
   skills: [{
-            text: "JavaScript",
-            count: 30
-        }, {
-            text: ".NET",
-            count: 92
-        }, {
-            text: "HTML5/CSS3",
-            count: 50
-        }, {
-            text: "GIT/SVN",
-            count: 60
-        }, {
-            text: "GRUNT",
-            count: 40
-        },{
-            text: "MongoDB",
-            count: 75
-        }],
+    text: "JavaScript",
+    count: 30
+  }, {
+    text: ".NET",
+    count: 92
+  }, {
+    text: "HTML5/CSS3",
+    count: 50
+  }, {
+    text: "GIT/SVN",
+    count: 60
+  }, {
+    text: "GRUNT",
+    count: 40
+  }, {
+    text: "MongoDB",
+    count: 75
+  }],
   display: function() {
     $.each(bio.contacts.social, function(i, obj) {
       var element = replaceDataPlaceholder(replaceUrlPlaceholder(HTMLIconLogo, obj.img), obj.data);
@@ -70,14 +70,15 @@ var bio = {
     this.displaySkills();
   },
   displaySkills: function() {
-     var skillsEntry = $("#skills .row-entry");
-         for (var i = 0; i < this.skills.length; i++) {
-             var skill = $(HTMLskill);
-             skillsEntry.append(skill);
-             displaySkill(skill[0], this.skills[i].text, this.skills[i].count);
-         }
+    var skillsEntry = $("#skills .row-entry");
+    for (var i = 0; i < this.skills.length; i++) {
+      var skill = $(HTMLskill);
+      skillsEntry.append(skill);
+      displaySkill(skill[0], this.skills[i].text, this.skills[i].count);
+    }
   }
-}
+};
+
 var work = {
   jobs: [{
     employer: "Employer1",
@@ -103,6 +104,7 @@ var work = {
     }
   }
 };
+
 var projects = {
   projects: [{
     title: "Sample 1",
@@ -141,6 +143,7 @@ var projects = {
     }
   }
 };
+
 var education = {
   schools: [{
     name: "National University of Dnipropetrovsk",
@@ -156,12 +159,12 @@ var education = {
     school: "School1",
     date: "2015",
     url: "#"
-  },{
+  }, {
     title: "Course 2",
     school: "School3",
     date: "2015",
     url: "#"
-  },{
+  }, {
     title: "Course 3",
     school: "School3",
     date: "2015",
@@ -176,14 +179,15 @@ var education = {
       for (var j = 0; j < school.majors.length; j++) {
         educationEntry.append(replaceDataPlaceholder(HTMLschoolMajor, school.majors[j]));
       }
+      education.append(educationEntry);
     }
-    education.append(educationEntry);
+
     if (this.onlineCourses.length > 0) {
       education.append(HTMLonlineClasses);
     }
-    for (var i = 0; i < this.onlineCourses.length; i++) {
+    for (var k = 0; k < this.onlineCourses.length; k++) {
       var courseEntry = $(HTMLGenericStart);
-      var course = this.onlineCourses[i];
+      var course = this.onlineCourses[k];
       courseEntry.append(replaceDataPlaceholder(replaceUrlPlaceholder(HTMLonlineTitle, course.url), course.title) + replaceDataPlaceholder(HTMLonlineSchool, course.school), replaceDataPlaceholder(HTMLonlineDates, course.date));
       education.append(courseEntry);
     }
@@ -191,12 +195,12 @@ var education = {
 };
 
 function displaySkill(id, label, value) {
-    var div = d3.select(id);
-    var rp = radialProgress(id)
-        .label(label)
-        .diameter(120)
-        .value(value)
-        .render();
+  var div = d3.select(id);
+  var rp = radialProgress(id)
+    .label(label)
+    .diameter(120)
+    .value(value)
+    .render();
 }
 
 function locationizer(work) {
@@ -225,6 +229,7 @@ function replacePlaceholder(pattern, placenolderName, data) {
   }
   return pattern;
 }
+
 $("#map").append(map);
 
 bio.display();

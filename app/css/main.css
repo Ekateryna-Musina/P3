@@ -69,7 +69,6 @@ ul {
   font-size: 0.9em;
 }
 .arc {
-  stroke-weight: 0.1;
   fill: #363961;
 }
 .pr-text {
@@ -379,7 +378,6 @@ ul {
 
 @media (max-width:480px) {
   .flex-box-center {
-    -webkit-flex-flow: column wrap;
     flex-flow: column wrap;
   }
   h1 {

@@ -1,4 +1,4 @@
-'use strict';
+
 
 //Global configuration
 var imageFolder = 'img/';
@@ -94,6 +94,7 @@ var iconsImageSizes = [
 
 
 module.exports = function (grunt) {
+  'use strict';
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
@@ -117,15 +118,6 @@ module.exports = function (grunt) {
                   src:  ['**'],
                   dest: dist_img
                 }]
-            },
-
-            appwf:{
-              files:[{
-                expand: true,
-                cwd: dist_path,
-                src:  ['**'],
-                dest: '/var/www/resume'
-              }]
             }
         },
 
@@ -295,5 +287,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-processhtml');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-    grunt.registerTask('default', ['clean', 'copy:mainlibs', 'mkdir', 'uglify', 'cssmin', 'processhtml',  'htmlmin', 'copy:appwf']);
+    grunt.registerTask('default', ['clean', 'copy:mainlibs', 'mkdir', 'uglify', 'cssmin', 'processhtml',  'htmlmin']);
 };
